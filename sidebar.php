@@ -9,7 +9,7 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     <a href="./adminDashboard.php" ><i class="fa fa-home"></i> Dashboard</a>
     <a href="./viewAdmin/viewUsers.php"  onclick="showUsers()" ><i class="fa fa-users"></i> Users</a>
-    <a href="#products"   onclick="showProductItems()" ><i class="fa fa-th"></i> Products</a>
+    <a href="./viewAdmin/viewAdmin.php"   onclick="showProductItems()" ><i class="fa fa-th"></i> Admins</a>
     <a href="#orders" onclick="showOrders()"><i class="fa fa-list"></i> Orders</a>
   
   <!---->

@@ -67,7 +67,7 @@
                     <h5 style="color:white;">
                     <?php
                        
-                       $sql="SELECT * from orders";
+                       $sql="SELECT * from admins";
                        $result=$conn-> query($sql);
                        $count=0;
                        if ($result-> num_rows > 0){
@@ -78,6 +78,14 @@
                        }
                        echo $count;
                    ?>
+                   </h5>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <i class="fa fa-list mb-2" style="font-size: 70px;"></i>
+                    <h4 style="color:white;"><a href="viewAdmin/createAdmin.php">Add Admin</a></h4>
+                    <h5 style="color:white;">
                    </h5>
                 </div>
             </div>
