@@ -28,7 +28,7 @@ if (isset($_SESSION['admin_id'])) {
     <script>
         function confirmDelete(admin_id) {
             if (confirm("Are you sure you want to delete this admin?")) {
-                window.location = "deleteAdmin.php?admin_id=" + admin_id;
+                window.location = "../controller/deleteAdmin.php?admin_id=" + admin_id;
             }
         }
     </script>
