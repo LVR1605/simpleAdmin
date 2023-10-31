@@ -34,7 +34,8 @@ if (isset($_SESSION['admin_id'])) {
     </script>
 </head>
 <body>
-<button><a href="../adminDashboard.php">Back</a></button>
+<button><a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Back</a></button>
+<button><a href="../adminDashboard.php">Home</a></button>
 <p>Admin in use, <?php echo $admin_first_name; ?></p>
 <p>
     <?php
@@ -50,6 +51,8 @@ if (isset($_SESSION['admin_id'])) {
         <th>Name</th>
         <th>Email</th>
         <th>Password</th>
+        <th>Action</th>
+        
     </thead>
     <tbody>
         <?php
@@ -61,7 +64,7 @@ if (isset($_SESSION['admin_id'])) {
                 $deleteLink = '<a href="javascript:void(0);" onclick="confirmDelete(' . $row['admin_id'] . ')">Delete</a>';
             } else {
                 // Admin with other names or "admin" itself can't delete
-                $deleteLink = 'N/A';
+                $deleteLink = 'Not Authorized';
             }
         ?>
             <tr>
