@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2023 at 11:54 AM
+-- Generation Time: Oct 31, 2023 at 10:23 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -62,7 +62,9 @@ INSERT INTO `result` (`result_id`, `user_id`, `q1`, `q2`, `q3`, `q4`, `q5`, `q6`
 (1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 63.00),
 (2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 63.00),
 (3, 3, 1, 2, 1, 2, 1, 0, 0, 1, 3, 0, 1, 0, 1, 0, 1, 0, 1, 3, 0, 1, 1, 20.00),
-(4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 2, 0, 0, 1, 2, 3, 3, 3, 3, 3, 2, 50.00);
+(4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 2, 0, 0, 1, 2, 3, 3, 3, 3, 3, 2, 50.00),
+(5, 5, 2, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8.00),
+(6, 6, 3, 3, 1, 0, 1, 0, 2, 1, 0, 1, 2, 3, 0, 0, 1, 2, 0, 0, 0, 0, 0, 20.00);
 
 -- --------------------------------------------------------
 
@@ -74,9 +76,10 @@ CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `first_name` varchar(255) DEFAULT NULL,
   `last_name` varchar(255) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `pass` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -84,11 +87,13 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `pass`, `created_at`, `deleted_at`) VALUES
-(1, 'aubrey', 'amante9', 'aubreyamante.9@gmail.com', '0000', '2023-10-30 03:52:46', NULL),
-(2, 'aubrey', 'amante10', 'aubreyamante.10@gmail.com', '1010', '2023-10-30 03:53:39', NULL),
-(3, 'aubrey', 'amante11', 'aubreyamante.11@gmail.com', '1111', '2023-10-30 03:54:58', NULL),
-(4, 'aubrey', 'amante14', 'aubreyamante.14@gmail.com', '1414', '2023-10-30 05:18:25', NULL);
+INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `age`, `email`, `pass`, `created_at`, `deleted_at`) VALUES
+(1, 'aubrey', 'amante9', 0, 'aubreyamante.9@gmail.com', '0000', '2023-10-30 11:52:46', NULL),
+(2, 'aubrey', 'amante10', 0, 'aubreyamante.10@gmail.com', '1010', '2023-10-30 11:53:39', NULL),
+(3, 'aubrey', 'amante11', 0, 'aubreyamante.11@gmail.com', '1111', '2023-10-30 11:54:58', NULL),
+(4, 'aubrey', 'amante14', 0, 'aubreyamante.14@gmail.com', '1414', '2023-10-30 13:18:25', NULL),
+(5, 'asdf', 'asdf', 54, 'sheanie@gmail.com', '9999', '2023-10-31 15:04:08', NULL),
+(6, 'asdf', 'asdf', 55, 'luis@gmail.com', '5555', '2023-10-31 15:08:31', NULL);
 
 --
 -- Indexes for dumped tables
@@ -115,13 +120,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `result`
 --
 ALTER TABLE `result`
-  MODIFY `result_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `result_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

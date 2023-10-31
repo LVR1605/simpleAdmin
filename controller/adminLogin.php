@@ -8,17 +8,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $submitted_password = $_POST["password"];
 
     // Prepare and execute a query to fetch the admin's credentials from the database
-    $stmt = $conn->prepare("SELECT admin_email, admin_pass FROM admins WHERE admin_email = ?");
+    $stmt = $conn->prepare("SELECT admin_id, admin_email, admin_pass FROM admins WHERE admin_email = ?");
     $stmt->bind_param("s", $submitted_username);
     $stmt->execute();
-    $stmt->bind_result($admin_email, $admin_password);
+    $stmt->bind_result($admin_id, $admin_email, $admin_password);
     $stmt->fetch();
     $stmt->close();
 
     // Check if the submitted username and password match the admin's credentials from the database
     if ($submitted_username == $admin_email && password_verify($submitted_password, $admin_password)) {
         // Authentication successful
-        echo "Login successful! Welcome, Admin!";
+        session_start();
+        $_SESSION['admin_id'] = $admin_id; // Store admin ID in a session variable
         header("Location: ../adminDashboard.php");
         exit; // Terminate the script to prevent further execution
     } else {

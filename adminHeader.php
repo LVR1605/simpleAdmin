@@ -1,7 +1,5 @@
 <?php
-   session_start();
    include_once "./config/dbconnect.php";
-
 ?>
 <head>
     <!-- Other head elements -->
