@@ -27,7 +27,7 @@
             </thead>
             <tbody>
                 <?php
-                require('../controller/users.php');
+                require('../controller/admins.php');
                 while ($row = $result->fetch_assoc()) {
                 ?>
                     <tr>
