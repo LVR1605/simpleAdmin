@@ -33,7 +33,7 @@ function confirmLogout() {
     var result = confirm("Are you sure you want to log out?");
     if (result) {
         // Redirect to the logout page or perform your logout action here
-        window.location.href = "./controller/adminLogout.php";
+        window.location.href = "../controller/adminLogout.php";
     } else {
         // Do nothing if the user clicks Cancel
     }
