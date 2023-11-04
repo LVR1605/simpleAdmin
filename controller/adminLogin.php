@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Authentication successful
         session_start();
         $_SESSION['admin_id'] = $admin_id; // Store admin ID in a session variable
-        header("Location: ../adminDashboard.php");
+        header("Location: ../viewAdmin/adminDashboard.php");
         exit; // Terminate the script to prevent further execution
     } else {
         // Authentication failed
