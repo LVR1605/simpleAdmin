@@ -9,8 +9,8 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     <a href="../viewAdmin/adminDashboard.php" ><i class="fa fa-home"></i> Dashboard</a>
     <a href="../viewAdmin/viewUsers.php"  onclick="showUsers()" ><i class="fa fa-users"></i> Users</a>
-    <a href="../viewAdmin/viewAdmin.php"   onclick="showProductItems()" ><i class="fa fa-th"></i> Admins</a>
-    <a href="../viewAdmin/viewResults.php" onclick="showOrders()"><i class="fa fa-list"></i> Results</a>
+    <a href="../viewAdmin/viewAdmin.php"   onclick="showAdmins()" ><i class="fa fa-th"></i> Admins</a>
+    <a href="../viewAdmin/viewResults.php" onclick="showResults()"><i class="fa fa-list"></i> Results</a>
 </div>
 <div id="main">
     <button class="openbtn" onclick="openNav()"><i class="fa fa-home"></i></button>
