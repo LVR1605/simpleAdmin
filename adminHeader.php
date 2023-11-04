@@ -12,9 +12,14 @@
  <!-- nav -->
  <nav class="navbar navbar-expand-lg navbar-light px-5" style="background-color: #3B3131;">
     <a class="navbar-brand ml-5" href="../index.php">
-        <img src="./assets/images/logo.png" width="80" height="80" alt="Swiss Collection">
+        <a href="adminDashboard.php"><img src="./assets/images/logo.png" width="80" height="80" alt="Admin"></a>
     </a>
     <ul class="navbar-nav ml-auto">
+        <li>
+            <div>
+                <h4 style="color:white;"><a href="viewAdmin/createAdmin.php">Add Admin</a></h4>
+            </div>
+        </li>
         <li class="nav-item">
             <a class="nav-link text-white" href="#" onclick="confirmLogout()">
                 <i class="fas fa-sign-out-alt text-white"></i> Logout

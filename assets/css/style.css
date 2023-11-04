@@ -85,17 +85,6 @@
       .sidebar a {font-size: 18px;}
     }
 
-/************************** product table styling *********************************/
-
-
-
-/************************ login and sign up styling  ******************************/
-
-
-
-/* *******************   cart to login icon styling   ********************* */
-
-
 /* ****************************   footer  *************************** */
 .footer-hover{
   color: #000;
@@ -137,4 +126,9 @@ tr {
 
 tr:nth-child(even) {
   background-color: #eeeeee;
+}
+
+/* ************************ to highlight the row ********************* */
+.highlighted {
+  background-color: yellow; /* You can adjust the background color as needed */
 }

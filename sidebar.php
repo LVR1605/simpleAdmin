@@ -11,10 +11,7 @@
     <a href="./viewAdmin/viewUsers.php"  onclick="showUsers()" ><i class="fa fa-users"></i> Users</a>
     <a href="./viewAdmin/viewAdmin.php"   onclick="showProductItems()" ><i class="fa fa-th"></i> Admins</a>
     <a href="./viewAdmin/viewResults.php" onclick="showOrders()"><i class="fa fa-list"></i> Results</a>
-  
-  <!---->
 </div>
- 
 <div id="main">
     <button class="openbtn" onclick="openNav()"><i class="fa fa-home"></i></button>
 </div>

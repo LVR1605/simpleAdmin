@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 31, 2023 at 10:23 AM
+-- Generation Time: Nov 04, 2023 at 08:54 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -24,12 +24,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `admin_id` int(11) NOT NULL,
+  `admin_first_name` varchar(255) DEFAULT NULL,
+  `admin_last_name` varchar(255) DEFAULT NULL,
+  `admin_email` varchar(255) DEFAULT NULL,
+  `admin_pass` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`admin_id`, `admin_first_name`, `admin_last_name`, `admin_email`, `admin_pass`, `created_at`, `deleted_at`) VALUES
+(1, 'admin', 'admin', 'admin@gmail.com', '$2y$10$FV7ALz9zt0il/Sf5pYywVO82IpXocXvLx5duXLveWPci57coX2Qri', '2023-11-04 07:35:44', NULL),
+(2, 'aubrey', 'amante', 'aubreyamante@gmail.com', '$2y$10$spF8eYC8E3B/0Hf3gVZ9xuU3dmaSJaQtAn0zzbN6TrzPxDhU/SKTe', '2023-11-04 07:36:08', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `result`
 --
 
 CREATE TABLE `result` (
   `result_id` int(11) NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
   `q1` int(11) DEFAULT NULL,
   `q2` int(11) DEFAULT NULL,
   `q3` int(11) DEFAULT NULL,
@@ -59,12 +83,7 @@ CREATE TABLE `result` (
 --
 
 INSERT INTO `result` (`result_id`, `user_id`, `q1`, `q2`, `q3`, `q4`, `q5`, `q6`, `q7`, `q8`, `q9`, `q10`, `q11`, `q12`, `q13`, `q14`, `q15`, `q16`, `q17`, `q18`, `q19`, `q20`, `q21`, `result`) VALUES
-(1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 63.00),
-(2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 63.00),
-(3, 3, 1, 2, 1, 2, 1, 0, 0, 1, 3, 0, 1, 0, 1, 0, 1, 0, 1, 3, 0, 1, 1, 20.00),
-(4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 2, 0, 0, 1, 2, 3, 3, 3, 3, 3, 2, 50.00),
-(5, 5, 2, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8.00),
-(6, 6, 3, 3, 1, 0, 1, 0, 2, 1, 0, 1, 2, 3, 0, 0, 1, 2, 0, 0, 0, 0, 0, 20.00);
+(1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 63.00);
 
 -- --------------------------------------------------------
 
@@ -88,23 +107,24 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `age`, `email`, `pass`, `created_at`, `deleted_at`) VALUES
-(1, 'aubrey', 'amante9', 0, 'aubreyamante.9@gmail.com', '0000', '2023-10-30 11:52:46', NULL),
-(2, 'aubrey', 'amante10', 0, 'aubreyamante.10@gmail.com', '1010', '2023-10-30 11:53:39', NULL),
-(3, 'aubrey', 'amante11', 0, 'aubreyamante.11@gmail.com', '1111', '2023-10-30 11:54:58', NULL),
-(4, 'aubrey', 'amante14', 0, 'aubreyamante.14@gmail.com', '1414', '2023-10-30 13:18:25', NULL),
-(5, 'asdf', 'asdf', 54, 'sheanie@gmail.com', '9999', '2023-10-31 15:04:08', NULL),
-(6, 'asdf', 'asdf', 55, 'luis@gmail.com', '5555', '2023-10-31 15:08:31', NULL);
+(1, 'aubrey', 'amante', 21, 'aubreyamante.9@gmail.com', '1111', '2023-11-04 15:37:29', NULL);
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
 -- Indexes for table `result`
 --
 ALTER TABLE `result`
   ADD PRIMARY KEY (`result_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `result_ibfk_1` (`user_id`);
 
 --
 -- Indexes for table `users`
@@ -117,16 +137,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `result`
 --
 ALTER TABLE `result`
-  MODIFY `result_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `result_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -136,7 +162,7 @@ ALTER TABLE `users`
 -- Constraints for table `result`
 --
 ALTER TABLE `result`
-  ADD CONSTRAINT `result_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+  ADD CONSTRAINT `result_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
