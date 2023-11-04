@@ -21,5 +21,5 @@ $stmt->execute();
 $stmt->close();
 $conn->close();
 
-header("location: ../adminDashboard.php?save-success=true");
+header("location: ../viewAdmin/adminDashboard.php?save-success=true");
 ?>

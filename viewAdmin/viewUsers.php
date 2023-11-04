@@ -8,7 +8,7 @@
 </head>
 <body>
     <button><a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Back</a></button>
-    <button><a href="../adminDashboard.php">Home</a></button>
+    <button><a href="../viewAdmin/adminDashboard.php">Home</a></button>
     <h3 class="font-size">Users</h3>
     <div>
         <form method="get" action="viewUsers.php">

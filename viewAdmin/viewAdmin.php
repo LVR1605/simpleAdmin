@@ -12,7 +12,7 @@
 include "../controller/adminIncharge.php";
 ?>
 <button><a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Back</a></button>
-<button><a href="../adminDashboard.php">Home</a></button>
+<button><a href="../viewAdmin/adminDashboard.php">Home</a></button>
 <p>Admin in use, <?php echo $admin_first_name; ?></p>
 <p>
     <?php
